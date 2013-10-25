@@ -31,8 +31,11 @@ Requirements
     http://github.com/earl/beanstalkc
     
 * pyyaml
+
+    http://pyyaml.org/
     beanstalkc used to parse the returned results.
 
 * django-flash
     
+    https://github.com/danielfm/django-flash
 

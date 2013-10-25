@@ -20,7 +20,7 @@
 <table>
     <tr><td class='aligntop'>
     {% for tube, tube_stats in stats.items %}
-        {% if tube == "all" %}
+        {% ifequal tube "all" %}
             <table class='floatleft gridwidth {% if forloop.counter|divisibleby:'3' %}clearboth{% endif %}'>
                 <tr><th colspan='2'><h3>{{ tube }}</h3></th></tr>
                 <tr><th>Key</th><th>Value</th></tr>
@@ -34,10 +34,11 @@
                 {% endfor %}
             </table>
             </td><td class='aligntop'>
-        {% endif %}
+        {% endifequal %}
     {% endfor %}
     {% for tube, tube_stats in stats.items %}
-        {% if tube != "default" and tube != "all" %}
+        {% ifnotequal tube "default"  %}
+            {% ifnotequal tube "all"  %}
             <table class='floatleft gridwidth {% if forloop.counter|divisibleby:'3' %}clearboth{% endif %}'>
                 <tr><th colspan='2'><h3>{{ tube }}</h3></th></tr>
                 <tr><th>Key</th><th>Value</th></tr>
@@ -50,7 +51,8 @@
                     {% endifnotequal %}
                 {% endfor %}
             </table>
-        {% endif %}
+            {% endifnotequal %}
+        {% endifnotequal %}
     {% endfor %}
     </td></tr>
 </table>

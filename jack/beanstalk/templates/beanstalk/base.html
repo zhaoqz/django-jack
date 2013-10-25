@@ -102,9 +102,9 @@
                 <select id="change_connection">
                     {% for host, port in connections %}
                     <option value="{{forloop.counter0}}"
-                            {% if conn_id == forloop.counter0 %}
+                            {% ifequal conn_id forloop.counter0 %}
                                 selected="selected"
-                            {% endif %}>
+                            {% endifequal %}>
                         {{host}}:{{port}}
                     </option>
                     {% endfor %}

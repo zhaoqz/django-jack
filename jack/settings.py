@@ -22,6 +22,13 @@ DATABASES = {
     }
 }
 
+DATABASE_ENGINE = 'django.db.backends.sqlite3'
+DATABASE_NAME = abspath('database.db')
+DATABASE_USER = ''
+DATABASE_PASSWORD = ''
+DATABASE_HOST = ''
+DATABASE_PORT = ''
+
 LOGIN_REDIRECT_URL = '/'
 
 FLASH_IGNORE_MEDIA = True
@@ -99,7 +106,7 @@ INSTALLED_APPS = (
 )
 
 ### MULTIPLE BEANSTALKD SUPPORT
-BEANSTALK_SERVERS = (
+BEANSTALK_SERVERS = ( ('0.0.0.0',11300),
 )
 from django.conf import global_settings
 MIDDLEWARE_CLASSES += ('beanstalk.multiple_beanstalk.Middleware',)

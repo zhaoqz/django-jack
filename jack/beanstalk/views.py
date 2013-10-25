@@ -1,4 +1,3 @@
-
 from django.shortcuts import render_to_response, redirect
 from django.contrib.auth.decorators import login_required
 
@@ -113,7 +112,7 @@ def put(request):
 
             client.use(form.cleaned_data['tube'])
 
-            id = client.put(str(form.cleaned_data['body']), form.cleaned_data['priority'], \
+            id = client.put(form.cleaned_data['body'].encode('utf8'), form.cleaned_data['priority'], \
                 form.cleaned_data['delay'], form.cleaned_data['ttr'])
  
             request.flash.put(notice='job submited to queue with id #%d' % id)
